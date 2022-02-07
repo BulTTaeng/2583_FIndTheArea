@@ -6,11 +6,11 @@
 using namespace std;
 
 int m , n ,k,nx , ny;
-bool paper[102][102];
 bool visit[102][102];
 
 int dx[] = {-1, 1, 0,0};
 int dy[] = {0 , 0 ,1 ,-1};
+
 vector<int> v;
 void dfs(int x , int y);
 int temp =0;
@@ -22,7 +22,7 @@ int main(){
 
     cin >> m >> n >> k;
     int x1,x2,y1,y2;
-    memset(paper, false ,sizeof(paper));
+    
     memset(visit, false , sizeof(visit));
     
     for(int i =0; i<k; i++){
@@ -30,24 +30,17 @@ int main(){
 
         for(int j = y1; j<y2; j++){
             for(int kk = x1; kk<x2; kk++){
-                paper[j][kk] = true;
                 visit[j][kk] = true;
             }
         }
     }
 
-    /*for(int j = 0; j<m; j++){
-        for(int k = 0; k<n; k++){
-            cout << paper[j][k] << " ";
-        }
-        cout << "\n";
-    }*/
     int a=0;
 
     for(int i =0; i<m; i++){
         for(int j = 0 ; j<n; j++){
 
-            if(paper[i][j] == false && visit[i][j] == false){
+            if(visit[i][j] == false){
                 temp = 0;
                 dfs(i,j);
                 a++;

@@ -20,7 +20,9 @@ So, I make a [10002] array and check true if that area is founded.
 
 I kept failed and I cannot find the error or mistake. But I notice that I have print the duplicates as well... So I use vector to print the result.
 
-The solution is simeple, check all location in the rectangle and if it is not rectangle and visited, dfs.
+The solution is simeple, check all location in the rectangle and make them visited. 
+
+If it is not visited, run dfs.
 
 Push the area detected in the vector and reset the variable of area every time dfs.
 
